@@ -16,11 +16,11 @@ main_menu = tk.Menu()
 
 
 ##---------------file------------------##
-new_icon = tk.PhotoImage(file='icons/new.png')
-open_icon = tk.PhotoImage(file='icons/open.png')
-save_icon = tk.PhotoImage(file='icons/save.png')
-save_as_icon = tk.PhotoImage(file='icons/save_as.png')
-exit_icon = tk.PhotoImage(file='icons/exit.png')
+new_icon = tk.PhotoImage(file='icons2/new.png')
+open_icon = tk.PhotoImage(file='icons2/open.png')
+save_icon = tk.PhotoImage(file='icons2/save.png')
+save_as_icon = tk.PhotoImage(file='icons2/save_as.png')
+exit_icon = tk.PhotoImage(file='icons2/exit.png')
 
 file = tk.Menu(main_menu, tearoff=False)
 
@@ -28,29 +28,29 @@ file = tk.Menu(main_menu, tearoff=False)
 
 
 ##--------------edit------------------##  
-copy_icon = tk.PhotoImage(file='icons/copy.png')
-paste_icon = tk.PhotoImage(file='icons/paste.png')
-cut_icon = tk.PhotoImage(file='icons/cut.png')
-clear_all_icon = tk.PhotoImage(file='icons/clear_all.png')
-find_icon = tk.PhotoImage(file='icons/find.png')
+copy_icon = tk.PhotoImage(file='icons2/copy.png')
+paste_icon = tk.PhotoImage(file='icons2/paste.png')
+cut_icon = tk.PhotoImage(file='icons2/cut.png')
+clear_all_icon = tk.PhotoImage(file='icons2/clear_all.png')
+find_icon = tk.PhotoImage(file='icons2/find.png')
 
 edit = tk.Menu(main_menu, tearoff=False)
 
 
 ##-------------view---------------------## 
-tool_bar_icon = tk.PhotoImage(file='icons/tool_bar.png')
-status_bar_icon = tk.PhotoImage(file='icons/status_bar.png')
+tool_bar_icon = tk.PhotoImage(file='icons2/tool_bar.png')
+status_bar_icon = tk.PhotoImage(file='icons2/status_bar.png')
 
 view = tk.Menu(main_menu, tearoff=False)
 
 
 ##-------------color theme--------------## 
-light_default_icon = tk.PhotoImage(file='icons/light_default.png')
-light_plus_icon = tk.PhotoImage(file='icons/light_plus.png')
-dark_icon = tk.PhotoImage(file='icons/dark.png')
-red_icon = tk.PhotoImage(file='icons/red.png')
-monokai_icon = tk.PhotoImage(file='icons/monokai.png')
-night_blue_icon = tk.PhotoImage(file='icons/night_blue.png')
+light_default_icon = tk.PhotoImage(file='icons2/light_default.png')
+light_plus_icon = tk.PhotoImage(file='icons2/light_plus.png')
+dark_icon = tk.PhotoImage(file='icons2/dark.png')
+red_icon = tk.PhotoImage(file='icons2/red.png')
+monokai_icon = tk.PhotoImage(file='icons2/monokai.png')
+night_blue_icon = tk.PhotoImage(file='icons2/night_blue.png')
 
 color_theme = tk.Menu(main_menu, tearoff=False)
 
