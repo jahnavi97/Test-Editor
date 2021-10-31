@@ -158,6 +158,108 @@ align_right_btn.grid(row=0, column=8, padx=5) #grid widget is split into a numbe
 
 ######################text editor###############################
 
+text_editor = tk.Text(main_application)
+text_editor.config(wrap='word', relief=tk.FLAT)
+
+scroll_bar = tk.Scrollbar(main_application)
+text_editor.focus_set()
+scroll_bar.pack(side=tk.RIGHT, fill=tk.Y)
+text_editor.pack(fill=tk.BOTH, expand=True)
+scroll_bar.config(command=text_editor.yview)
+text_editor.config(yscrollcommand=scroll_bar.set)
+
+#font family and font size functionality
+current_font_family = 'Arial'
+current_font_size = 12
+
+def change_font(main_application):
+    global current_font_family
+    current_font_family = font_family.get()
+    text_editor.configure(font=(current_font_family, current_font_size))
+
+def change_fontsize(main_application):
+    global current_font_size
+    current_font_size = size_var.get()
+    text_editor.configure(font=(current_font_family, current_font_size))
+
+font_box.bind("<<ComboboxSelected>>", change_font)
+font_size.bind("<<ComboboxSelected>>", change_fontsize)
+
+########### button functionality
+def change_bold():
+    text_property = tk.font.Font(font=text_editor['font'])
+    if text_property.actual()['weight'] == 'normal':
+        text_editor.configure(font=(current_font_family, current_font_size, 'bold'))
+    if text_property.actual()['weight'] == 'bold':
+        text_editor.configure(font=(current_font_family, current_font_size, 'normal'))
+
+bold_btn.configure(command=change_bold)
+
+
+# italic functionality
+def change_italic():
+    text_property = tk.font.Font(font=text_editor['font'])
+    if text_property.actual()['slant'] == 'roman':
+        text_editor.configure(font=(current_font_family, current_font_size, 'italic'))
+    if text_property.actual()['slant'] == 'italic':
+        text_editor.configure(font=(current_font_family, current_font_size, 'roman'))
+
+italic_btn.configure(command=change_italic)
+
+# underline functionality
+def change_underline():
+    text_property = tk.font.Font(font=text_editor['font'])
+    if text_property.actual()['underline'] == 0:
+        text_editor.configure(font=(current_font_family, current_font_size, 'underline'))
+    if text_property.actual()['slant'] == '1':
+        text_editor.configure(font=(current_font_family, current_font_size, 'normal'))
+
+underline_btn.configure(command=change_underline)
+
+
+## font color functionality
+def change_font_color():
+    color_var = tk.colorchooser.askcolor()
+    text_editor.configure(fg=color_var[1])
+
+
+font_color_btn.configure(command=change_font_color)
+
+## align functionality
+def align_left():
+    text_content = text_editor.get(1.0, 'end')
+    text_editor.tag_config('left',justify=tk.LEFT)
+    text_editor.delete(1.0, tk.END)
+    text_editor.insert(tk.INSERT, text_content, 'left')
+
+align_left_btn.configure(command=align_left)
+
+# center
+def align_center():
+    text_content = text_editor.get(1.0, 'end')
+    text_editor.tag_config('center',justify=tk.CENTER)
+    text_editor.delete(1.0, tk.END)
+    text_editor.insert(tk.INSERT, text_content, 'center')
+
+align_center_btn.configure(command=align_center)
+
+# right
+def align_right():
+    text_content = text_editor.get(1.0, 'end')
+    text_editor.tag_config('right',justify=tk.RIGHT)
+    text_editor.delete(1.0, tk.END)
+    text_editor.insert(tk.INSERT, text_content, 'right')
+
+align_right_btn.configure(command=align_right)
+
+
+
+
+
+
+text_editor.configure(font=('Arial', 12))   
+######################## end text editor ####################
+
 #######################status bar###############################
 
 ########################shortcut keys###########################
